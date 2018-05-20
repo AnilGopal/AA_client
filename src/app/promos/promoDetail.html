@@ -1,0 +1,52 @@
+
+
+<div class="container promo-details">
+    <div class="col-md-12">
+        <h3 class="promo-details-title font-md"> Promo Details </h3>
+    </div>
+    <div class="col-md-6">
+
+            {{vm.memId}}
+        <div>{{vm.promoDetail.title}}</div>
+        <p><h3>{{vm.promoDetail.description}}</h3></p>
+        <p><h3>Worth Rs {{vm.promoDetail.amount}}</h3></p>
+        <p ng-if="vm.promoDetail.qty" class="font-sm">
+            <span ng-if="vm.promoDetail.qty>0">
+                You have {{vm.promoDetail.qty}} of this promo purchased. Do you want to gift it to someone else?
+            </span>
+        </p>
+        <div class="col-md-6">
+            <a class="btn btn-default" ui-sref="promoDetail.purchase({id:vm.promoDetail.id})"
+               >
+                Purchase
+            </a>
+            <a ui-sref="promoDetail.gift({id:vm.promoDetail.id})"
+               class="btn btn-default">
+                Gift
+            </a>
+        </div>
+    </div>
+    <div class="col-md-6">
+        <div ui-view></div>
+    </div>
+</div>
+
+<style>
+    .promo-details {
+        font-size: 14px;
+        padding: 20px 0;
+        background: #f2f2f2;
+    }
+    .promo-details-title {
+        color: #fff;
+        background: #908c8c;
+        margin: -20px -15px 15px;
+        padding: 6px 13px;
+    }
+    font-sm {
+        font-size: 12px;
+    }
+    font-md {
+        font-size: 14px;
+    }
+</style>

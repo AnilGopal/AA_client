@@ -1,0 +1,32 @@
+<body>
+
+<style>
+  .card {
+    width: 400px;
+    margin: 0 auto;
+    background: #dfdfdf;
+    padding: 20px 30px 10px;
+  }
+  .breadcrumbb{
+    margin: 0 auto;
+    padding: 20px 80px 10px;
+  }
+  .primary-btn {
+    border: none;
+    outline: none;
+    box-shadow: none;
+    margin: 0 auto;
+    display: block;
+  }
+
+</style>
+
+<div class="container" ng-if="!app.loggedIn">
+  <div class="card">
+    <button class="btn btn-primary primary-btn" ng-click="app.clickme(1)"> Login here </button>
+  </div>
+</div>
+
+  <a ui-sref="promo" class="breadcrumbb" ng-if="app.loggedIn">Promo</a>
+  <div ui-view></div>
+</body>

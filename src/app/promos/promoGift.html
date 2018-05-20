@@ -1,0 +1,24 @@
+
+    <h3>Promo Gift Option </h3>
+<div class="col-md-12">
+    <div ng-if="!vm.transferSuccess" class="row">
+        <div class="col-md-9">
+            <div class="row">
+            <input type="text" class="form-control"
+                   placeholder="Username to gift the voucher to"
+                   ng-model="vm.sendTo"/>
+            </div>
+        </div>
+        <div class="row">
+        <div class="col-md-3">
+            <button type="button" class="btn btn-primary" ng-click="vm.giftPromo(vm.promoDetail.id, vm.memId, vm.sendTo)"> Send </button>
+        </div>
+        </div>
+    </div>
+</div>
+    <div style="margin-top: 10px">
+    <p class="text-primary" ng-if="!vm.transferSuccess">
+        You have {{vm.promoDetail.qty}} of this promo purchased. Do you want to gift it to someone else?
+    </p>
+    <p class="text-success">{{vm.statusMsg}}</p>
+    </div>

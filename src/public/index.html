@@ -1,0 +1,46 @@
+<!doctype html>
+<html ng-app="promoapp" lang="en">
+<head>
+  <meta charset="UTF-8">
+  <title>AirAsia Promo App</title>
+  <link rel="icon" type="image/x-icon" href="/img/favicon.ico">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <link href="https://stackpath.bootstrapcdn.com/bootstrap/3.1.1/css/bootstrap.min.css"
+        rel="stylesheet" >
+  <style>
+    header {
+      background: #fff;
+      color: red;
+    }
+    footer {
+      padding: 15px 30px;
+      position: fixed;
+      background: #f7f7f7;
+      width: 100%;
+      bottom: 0;
+    }
+  </style>
+  <base href="/">
+</head>
+<body>
+<div class="container">
+  <header class="col-md-12">
+    <div class="col-md-3">
+      <h1>AirAsia</h1>
+    </div>
+    <div class="col-md-9">
+    <h3 ng-cloak class="text-right">Welcome
+      <span ng-show="!app.userName"> Guest</span>
+      <span ng-show="app.userName" ng-bind="app.userName"></span>
+    </h3>
+    </div>
+  </header>
+</div>
+  <app></app>
+  <footer>
+    ©2018 AirAsia Berhad. Usage of the AirAsia website states your compliance of our
+    This website is owned and operated by AirAsia Berhad (284669-W) (“AirAsia”).
+    <span class="in" style="">All domestic flights in India are operated by AirAsia (India) Ltd. </span>
+  </footer>
+</body>
+</html>

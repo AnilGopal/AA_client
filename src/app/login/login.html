@@ -1,0 +1,36 @@
+<div class="card">
+    <form class="form-horizontal">
+        <div class="form-group">
+            <div class="col-sm-12">
+                <input type="text" class="form-control"
+                       ng-model="vm.usr"
+                       placeholder="Enter username">
+            </div>
+        </div>
+        <div class="form-group">
+            <div class="col-sm-12">
+                <input type="password" class="form-control"
+                       ng-model="vm.pwd"
+                       placeholder="Enter password">
+            </div>
+        </div>
+        <div class="form-group">
+            <div class="col-sm-12">
+                <button type="button" ng-click="vm.loginbutton(2)" class="btn btn-default">Login</button>
+            </div>
+        </div>
+    </form>
+</div>
+
+<style>
+    .form-control {
+        border: none;
+        box-shadow: none;
+        border: 1px solid #dedede;
+        margin: 0 auto;
+    }
+    .btn-default {
+        display: block;
+        margin: auto;
+    }
+</style>

@@ -1,0 +1,10 @@
+<h3>Promo Purchase Option </h3>
+    <!--{{vm.memId}}-->
+    <div ng-if="!vm.purchaseSuccess">
+        <h5>
+            You are about to purchase this promo
+        </h5>
+        <button type="button" class="btn btn-success" ng-click="vm.buyPromo(vm.promoDetail.id, vm.memId)"> Purchase </button>
+    </div>
+    <p class="text-success">{{vm.statusMsg}}</p>
+    <a ui-sref="promoDetail.gift" ng-if="vm.purchaseSuccess"> Gift the voucher to another user</a>
