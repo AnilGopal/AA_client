@@ -11,6 +11,7 @@ export default class LoginService {
       };
       vm.$http.post('http://localhost:5001/member/login/',data)
           .then(function(res){
+              vm.memberId = username;
               vm.defer.resolve(res);
           })
           .catch(function(err){
