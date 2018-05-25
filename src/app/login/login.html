@@ -1,25 +1,34 @@
-<div class="card">
-    <form class="form-horizontal">
-        <div class="form-group">
-            <div class="col-sm-12">
-                <input type="text" class="form-control"
-                       ng-model="vm.usr"
-                       placeholder="Enter username">
+<!-- Modal -->
+<div id="myModal" class="modal fade" role="dialog">
+    <div class="modal-dialog">
+        <!-- Modal content-->
+        <div class="modal-content">
+            <div class="modal-body">
+                    <form class="form-horizontal">
+                        <div class="form-group">
+                            <div class="col-sm-12">
+                                <input type="text" class="form-control"
+                                       ng-model="vm.usr"
+                                       placeholder="Enter username">
+                            </div>
+                        </div>
+                        <div class="form-group">
+                            <div class="col-sm-12">
+                                <input type="password" class="form-control"
+                                       ng-model="vm.pwd"
+                                       placeholder="Enter password">
+                            </div>
+                        </div>
+                        <div class="form-group">
+                            <div class="col-sm-12">
+                                <button type="button" ng-click="vm.loginbutton(2)" class="btn btn-default">Login</button>
+                            </div>
+                        </div>
+                    </form>
             </div>
         </div>
-        <div class="form-group">
-            <div class="col-sm-12">
-                <input type="password" class="form-control"
-                       ng-model="vm.pwd"
-                       placeholder="Enter password">
-            </div>
-        </div>
-        <div class="form-group">
-            <div class="col-sm-12">
-                <button type="button" ng-click="vm.loginbutton(2)" class="btn btn-default">Login</button>
-            </div>
-        </div>
-    </form>
+
+    </div>
 </div>
 
 <style>
@@ -32,5 +41,8 @@
     .btn-default {
         display: block;
         margin: auto;
+    }
+    .modal-dialog {
+        width: 400px;
     }
 </style>

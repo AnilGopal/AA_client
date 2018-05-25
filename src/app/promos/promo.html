@@ -1,4 +1,14 @@
-<div class="container">
+<div class="">
+    <h3 style="text-align: center">Top Promo</h3>
+    <div class="col-md-3" ng-repeat="promo in vm.promoList">
+        <div class="card">
+            <a ui-sref="promoDetail({code:promo.code})" style="text-decoration: none;">
+                <h3 style="margin: 0">{{promo.code}}</h3>
+                <p>{{promo.description}}</p>
+                <p>Rs {{promo.amount}}</p>
+            </a>
+        </div>
+    </div>
     <div class="col-md-12 promo-header">
 
         <div class="col-md-8">
@@ -10,10 +20,10 @@
 
     </div>
 
-    <table class="table table-striped">
-        <tbody>
-        <tr ng-repeat="promo in vm.promoList  | filter: searchKeyword">
-            <td><a ui-sref="promoDetail({code:promo.code})">
+    <table class="table table-striped" style="margin-bottom: 100px;">
+        <tbody style="height: 20px; overflow: scroll;">
+        <tr  ng-repeat="promo in vm.promoList  | filter: searchKeyword">
+            <td style="padding-left:25px;"><a ui-sref="promoDetail({code:promo.code})">
                 {{promo.code}}
             </a></td>
             <td><p>{{promo.description}}</p></td>

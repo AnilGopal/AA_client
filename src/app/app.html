@@ -2,14 +2,19 @@
 
 <style>
   .card {
-    width: 400px;
+    width: 300px;
+    margin: 20px 0 !important;
+    min-height: 170px;
     margin: 0 auto;
-    background: #dfdfdf;
+    border: 1px solid #dedede;
     padding: 20px 30px 10px;
+  }
+  .card:hover {
+    box-shadow: 0 4px 4px -4px #000;
   }
   .breadcrumbb{
     margin: 0 auto;
-    padding: 20px 80px 10px;
+    padding-left: 15px;
   }
   .primary-btn {
     border: none;
@@ -18,15 +23,91 @@
     margin: 0 auto;
     display: block;
   }
+  .banner-txt {
+    position: absolute;
+    bottom: 150px;
+    left: 100px;
+    color: #fff;
+  }
+  .banner-wrap {
+    position: relative;
+  }
+  .owl-nav {
+    display: none;
+  }
+  .owl-dots {
+    display: none;
+  }
 
 </style>
+<script>
+    $(document).ready(function(){
+        $('.owl-carousel').owlCarousel({
+            loop:true,
+            responsiveClass:true,
+            nav: false,
+            responsive:{
+                0:{
+                    items:1,
+                    nav:true
+                },
+                600:{
+                    items:1,
+                    nav:false
+                },
+                1000:{
+                    items:1,
+                    nav:true,
+                    loop:false
+                }
+            }
+        });
+    });
+</script>
 
-<div class="container" ng-if="!app.loggedIn">
-  <div class="card">
-    <button class="btn btn-primary primary-btn" ng-click="app.clickme(1)"> Login here </button>
+<div class="container-fluid">
+  <div class="row">
+  <div class="owl-carousel owl-theme">
+    <div class="banner-wrap">
+      <img src="https://www.airasia.com/cdn/aa-images/main-banner/inen/dom_hogan_2018_i5.jpg?sfvrsn=2"/>
+      <banner-text
+              title="BIG SALE! across our domestic network"
+              fly-to="Fly to Bengaluru, Goa, Kolkata
+        Hyderabad, Ranchi and more!"
+              amount="Rs 999">
+      </banner-text>
+    </div>
+    <div class="banner-wrap"> <img ng-src="https://www.airasia.com/cdn/aa-images/main-banner/jp/180520-sepriority-mb-bs.png?sfvrsn=2"/>
+      <banner-text
+              title="BIG SALE! across our domestic network"
+              fly-to="Fly to Bengaluru, Goa, Kolkata
+        Hyderabad, Ranchi and more!"
+              amount="Rs 999">
+      </banner-text>
+      </div>
+    <div class="banner-wrap"> <img ng-src="https://www.airasia.com/cdn/aa-images/main-banner/inen/route_launch_i5.jpg?sfvrsn=6"/>
+      <banner-text
+              title="BIG SALE! across our domestic network"
+              fly-to="Fly to Bengaluru, Goa, Kolkata
+        Hyderabad, Ranchi and more!"
+              amount="Rs 999">
+      </banner-text>
+    </div>
+  </div>
   </div>
 </div>
 
-  <a ui-sref="promo" class="breadcrumbb" ng-if="app.loggedIn">Promo</a>
+<div class="container" ng-if="!app.loggedIn">
+  <div>
+    <h3>Promos are used to provide various discount to customers</h3>
+  </div>
+  <div>
+    Promos are a fundamental business aspect which enables more sales and usages of the services offered by us
+    We have option for our customers to purchase promos and use it in their daily flights.
+    They can also gift the vouchers to their friends via transfer procedure. It is fast and simple.
+    Featured Promos are also displayed in the prommos page.
+    Chat feature will be implemented into the app soon.
+  </div>
+</div>
   <div ui-view></div>
 </body>

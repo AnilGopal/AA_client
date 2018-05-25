@@ -1,9 +1,11 @@
 
 
-<div class="container promo-details">
-    <div class="col-md-12">
-        <h3 class="promo-details-title font-md"> Promo Details </h3>
+<div class="promo-details">
+    <div class="col-md-12 promo-details-title">
+        <span ui-sref="promo" class="breadcrumbb" style="color: #fff;cursor: pointer;"> Promo <span style="font-size: 20px;">&#8249;</span></span>
+        <span class="font-md"> Promo Details </span>
     </div>
+    <div class="col-md-12" style="background: #f2f2f2; min-height: 300px;">
     <div class="col-md-6">
         <div>{{vm.promoDetail.title}}</div>
         <p><h3>{{vm.promoDetail.description}}</h3></p>
@@ -27,6 +29,7 @@
     <div class="col-md-6">
         <div ui-view></div>
     </div>
+    </div>
 </div>
 
 <style>
@@ -38,7 +41,7 @@
     .promo-details-title {
         color: #fff;
         background: #908c8c;
-        margin: -20px -15px 15px;
+        margin: -20px -15px 0;
         padding: 6px 13px;
     }
     font-sm {

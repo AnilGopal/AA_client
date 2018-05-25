@@ -27,10 +27,9 @@ class PromoDetailCtrl {
     constructor($state, $scope, PromoService, $stateParams, LoginService) {
         let vm = this;
         vm.memId = LoginService.getMemberId();
-        // let memId = 'abc';
         vm.promoDetail = {};
         vm.getPromoDetail = ()=>{
-            PromoService.getPromoDetail($stateParams.id, vm.memId)
+            PromoService.getPromoDetail($stateParams.code, vm.memId)
                 .then((resp)=>{
                     if (resp.data.status) {
                         delete resp.data.status;
@@ -55,7 +54,7 @@ class PromoPurchaseGiftCtrl {
         vm.memId = LoginService.getMemberId();
         vm.promoDetail = {};
         vm.getPromoDetail = ()=>{
-            PromoService.getPromoDetail($stateParams.id, vm.memId)
+            PromoService.getPromoDetail($stateParams.code, vm.memId)
             .then((resp)=>{
                 if(resp.data.status){
                     delete resp.data.status;

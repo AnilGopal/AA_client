@@ -10,11 +10,11 @@ export default class LoginService {
           "password": password
       };
       vm.$http.post('http://localhost:5001/member/login/',data)
-          .then(function(res){
+          .then((res)=>{
               vm.memberId = username;
               vm.defer.resolve(res);
           })
-          .catch(function(err){
+          .catch((err)=>{
               vm.defer.reject(err);
           });
       return vm.defer.promise;

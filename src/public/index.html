@@ -7,10 +7,29 @@
   <meta name="viewport" content="width=device-width, initial-scale=1">
   <link href="https://stackpath.bootstrapcdn.com/bootstrap/3.1.1/css/bootstrap.min.css"
         rel="stylesheet" >
+  <link href="https://fonts.googleapis.com/css?family=Rajdhani" rel="stylesheet">
+  <script
+          src="https://code.jquery.com/jquery-3.3.1.slim.min.js"
+          crossorigin="anonymous"></script>
+  <script rel="text/javascript" src="https://stackpath.bootstrapcdn.com/bootstrap/3.1.1/js/bootstrap.min.js"></script>
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/OwlCarousel2/2.3.4/assets/owl.carousel.min.css" />
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/OwlCarousel2/2.3.4/owl.carousel.min.js"></script>
+
   <style>
-    header {
+    .header {
       background: #fff;
       color: red;
+      position: fixed;
+      top: 0;
+      left:0;
+      width: 100%;
+      height: 50px;
+      background-color: #fff;
+      box-shadow: 0 4px 4px -4px #000;
+      z-index: 999;
+    }
+    body {
+      font-family: 'Rajdhani', sans-serif;
     }
     footer {
       padding: 15px 30px;
@@ -24,19 +43,40 @@
 </head>
 <body>
 <div class="container">
-  <header class="col-md-12">
-    <div class="col-md-3">
-      <h1>AirAsia</h1>
-    </div>
-    <div class="col-md-9">
-    <h3 ng-cloak class="text-right">Welcome
-      <span ng-show="!app.userName"> Guest</span>
-      <span ng-show="app.userName" ng-bind="app.userName"></span>
-    </h3>
-    </div>
+  <header class="col-md-12 header">
+    <!--<div class="col-md-3">-->
+      <!--<img src="img/airasia.png" style="max-width: 100px;"/>-->
+    <!--</div>-->
+    <!--<div class="col-md-9">-->
+    <!--<h3 ng-cloak class="text-right">Welcome-->
+      <!--<span ng-show="!app.userName"> Guest</span>-->
+      <!--<span ng-show="app.userName" ng-bind="app.userName"></span>-->
+    <!--</h3>-->
+    <!--</div>-->
+
+
+    <nav class="navbar navbar-default header">
+      <div class="container">
+        <div class="navbar-header">
+          <a class="navbar-brand" style="padding:0;" href="#"><img src="img/airasia.png" style="max-width: 100px;"/></a>
+        </div>
+        <ul class="nav navbar-nav navbar-right">
+          <li class="active"><a href="#">FAQ</a></li>
+          <li><a href="#">About Us</a></li>
+          <li><a href="#" ng-click="app.clickme(1)">Login</a></li>
+          <li><a href="#">
+            <h5 style="margin: 3px;" ng-cloak class="text-right">
+              Welcome
+            <span ng-show="!app.userName"> Guest</span>
+            <span ng-show="app.userName" ng-bind="app.userName"></span>
+
+          </h5></a></li>
+        </ul>
+      </div>
+    </nav>
   </header>
 </div>
-  <app></app>
+  <app style="display: block;"></app>
   <footer>
     ©2018 AirAsia Berhad. Usage of the AirAsia website states your compliance of our
     This website is owned and operated by AirAsia Berhad (284669-W) (“AirAsia”).

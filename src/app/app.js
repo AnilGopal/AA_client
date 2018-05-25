@@ -24,11 +24,13 @@ class AppCtrl {
     let ctr = this;
     ctr.state = $state;
     ctr.loggedIn = false;
-    $scope.$on('loginSuccess', function(event, data) {
+    $scope.$on('loginSuccess', (event, data) =>{
+        $("#myModal").modal('hide');
         ctr.loggedIn = true;
         ctr.userName = data.name;
     });
-    ctr.clickme = function(event){
+    ctr.clickme = (event)=>{
+        $("#myModal").modal('show');
         ctr.state.go('login');
     }
   }

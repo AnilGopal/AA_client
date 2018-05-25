@@ -18,9 +18,8 @@ export default class PromoService {
       };
     this.getPromoDetail = function(promoId,memId){
         let defer = $q.defer();
-        // memId = 'abc';
         let data = {
-              "pcode": "PROMO123",
+              "pcode": promoId,
               "mem": memId
           };
 
